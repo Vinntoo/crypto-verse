@@ -1,8 +1,18 @@
-import React from 'react'
+import { AppBar, Toolbar, Container, Typography  } from '@material-ui/core';
+import React from 'react';
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <AppBar color='transparent' position='static'>
+      <Container>
+        <Toolbar>
+          <Typography>
+            Cryptoverse
+          </Typography>
+        </Toolbar>
+      </Container>
+
+    </AppBar>
   )
 }
 

@@ -1,5 +1,6 @@
 
-import { BrowserRouter, Route } from 'react-router-dom';
+
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header';
 import Homepage from './Pages/Homepage';
@@ -14,17 +15,19 @@ function App() {
       color: 'white',
       minHeight: '100vh',
     },
-  }))
+  }));
 
   const classes = useStyles()
   return (
-   <BrowserRouter>
     <div className={classes.App}>
-      <Header/>
-      <Route path='/' component={Homepage} exact />
-      <Route path='/coins/:id' component={CoinPage} />
+      <Routes>
+        <Route path='/components/Header' element={<Header />} />
+        <Route path='/' element={<Homepage />} exact />
+        <Route path='/coins/:id' element={<CoinPage/>} />
+      </Routes>
+
     </div>
-   </BrowserRouter>
+   
   );
 }
 
